@@ -5,8 +5,6 @@ pub trait UnitValue {
 pub trait Quantity: Sized {
     type Unit: UnitValue;
 
-    fn default_unit() -> Self::Unit;
-
     fn from_base_value(value: f64) -> Self;
 
     fn base_value(&self) -> f64;

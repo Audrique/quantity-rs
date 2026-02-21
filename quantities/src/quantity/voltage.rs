@@ -25,9 +25,6 @@ impl UnitValue for VoltageUnit {
 
 impl Quantity for Voltage {
     type Unit = VoltageUnit;
-    fn default_unit() -> Self::Unit {
-        VoltageUnit::Volt
-    }
     fn from_base_value(v: f64) -> Self {
         Voltage { value: v }
     }

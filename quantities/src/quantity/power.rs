@@ -28,10 +28,6 @@ pub struct Power {
 impl Quantity for Power {
     type Unit = PowerUnit;
 
-    fn default_unit() -> Self::Unit {
-        PowerUnit::Watt
-    }
-
     fn from_base_value(value: f64) -> Self {
         Power { value }
     }

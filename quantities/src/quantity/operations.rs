@@ -42,12 +42,8 @@ mod test {
         Current::new(10.0, CurrentUnit::Ampere)
     }
 
-    fn expected_power() -> Power {
-        voltage() * current()
-    }
-
     #[test]
     fn current_times_voltage_gives_power() {
-        assert_eq!(expected_power(), Power::new(2300.0, PowerUnit::Watt));
+        assert_eq!(voltage() * current(), Power::new(2300.0, PowerUnit::Watt));
     }
 }

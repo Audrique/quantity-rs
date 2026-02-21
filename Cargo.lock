@@ -44,10 +44,20 @@ dependencies = [
 ]
 
 [[package]]
-name = "quantity-rs"
+name = "quantities"
 version = "0.1.0"
 dependencies = [
  "derive_more",
+ "quantities-macros",
+]
+
+[[package]]
+name = "quantities-macros"
+version = "0.1.0"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn",
 ]
 
 [[package]]

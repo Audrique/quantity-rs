@@ -1,11 +1,11 @@
-[package]
-name = "quantity-rs"
-version = "0.1.0"
-edition = "2024"
+[workspace]
+members = [
+  "quantities",
+  "quantities-macros",
+]
+resolver = "2"
+default-members = ["quantities"]
 
-[dependencies]
-derive_more = { version = "2.1.1", features = ["full"]}
-
-[features]
-electric = []
-default = ["electric"]
+[workspace.dependencies]
+quantities = { path = "./quantities" }
+quantities-macros = { path = "./quantities-macros" }

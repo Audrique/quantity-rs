@@ -25,9 +25,7 @@ impl UnitValue for CurrentUnit {
 
 impl Quantity for Current {
     type Unit = CurrentUnit;
-    fn default_unit() -> Self::Unit {
-        CurrentUnit::Ampere
-    }
+
     fn from_base_value(v: f64) -> Self {
         Current { value: v }
     }

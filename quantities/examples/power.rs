@@ -1,5 +1,5 @@
 #[cfg(feature = "electric")]
-use quantity_rs::quantity::power::{Power, PowerUnit};
+use quantities::quantity::power::{Power, PowerUnit};
 
 #[cfg(feature = "electric")]
 fn main() {
