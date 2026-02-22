@@ -1,11 +1,9 @@
-use crate::common::{Quantity, UnitValue};
-use derive_more::{Add, Div, Mul, Neg, Sub};
+use crate::common::UnitValue;
+use quantities_macros::quantity;
 use std::fmt;
 
-#[derive(PartialEq, PartialOrd, Add, Sub, Neg, Mul, Div, Debug)]
-pub struct Voltage {
-    value: f64,
-}
+#[quantity(unit = VoltageUnit)]
+pub struct Voltage;
 
 pub enum VoltageUnit {
     Volt,
@@ -20,16 +18,6 @@ impl UnitValue for VoltageUnit {
             VoltageUnit::KiloVolt => 1_000.0,
             VoltageUnit::MilliVolt => 0.001,
         }
-    }
-}
-
-impl Quantity for Voltage {
-    type Unit = VoltageUnit;
-    fn from_base_value(v: f64) -> Self {
-        Voltage { value: v }
-    }
-    fn base_value(&self) -> f64 {
-        self.value
     }
 }
 

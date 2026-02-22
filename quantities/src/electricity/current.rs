@@ -1,11 +1,8 @@
-use crate::common::{Quantity, UnitValue};
-use derive_more::{Add, Div, Mul, Neg, Sub};
-use std::fmt;
+use crate::common::UnitValue;
+use quantities_macros::quantity;
 
-#[derive(PartialEq, PartialOrd, Add, Sub, Neg, Mul, Div, Debug)]
-pub struct Current {
-    value: f64,
-}
+#[quantity(unit = CurrentUnit, value_type = f64)]
+pub struct Current;
 
 pub enum CurrentUnit {
     Ampere,
@@ -23,19 +20,8 @@ impl UnitValue for CurrentUnit {
     }
 }
 
-impl Quantity for Current {
-    type Unit = CurrentUnit;
-
-    fn from_base_value(v: f64) -> Self {
-        Current { value: v }
-    }
-    fn base_value(&self) -> f64 {
-        self.value
-    }
-}
-
-impl fmt::Display for Current {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+impl std::fmt::Display for Current {
+    fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
         write!(f, "{} A", self.to(CurrentUnit::Ampere))
     }
 }

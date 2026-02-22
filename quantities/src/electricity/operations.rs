@@ -1,34 +1,59 @@
+use crate::common::Quantity;
+use crate::electricity::{Current, Power, Voltage};
 use std::ops::{Div, Mul};
 
-use crate::common::Quantity;
-use super::{current::Current, power::Power, voltage::Voltage};
-
-impl Mul<Current> for Voltage {
-    type Output = Power;
-    fn mul(self, rhs: Current) -> Power {
-        Power::from_base_value(self.base_value() * rhs.base_value())
-    }
-}
-impl Mul<Voltage> for Current {
-    type Output = Power;
-    fn mul(self, rhs: Voltage) -> Power {
-        Power::from_base_value(self.base_value() * rhs.base_value())
+impl<T> Mul<Current<T>> for Voltage<T>
+where
+    T: Mul<Output = T>,
+    Voltage<T>: Quantity<T>,
+    Current<T>: Quantity<T>,
+    Power<T>: Quantity<T>,
+{
+    type Output = Power<T>;
+    fn mul(self, rhs: Current<T>) -> Power<T> {
+        Power::<T>::raw(self.raw_value() * rhs.raw_value())
     }
 }
 
-impl Div<Voltage> for Power {
-    type Output = Current;
-    fn div(self, rhs: Voltage) -> Current {
-        Current::from_base_value(self.base_value() / rhs.base_value())
+impl<T> Mul<Voltage<T>> for Current<T>
+where
+    T: Mul<Output = T>,
+    Voltage<T>: Quantity<T>,
+    Current<T>: Quantity<T>,
+    Power<T>: Quantity<T>,
+{
+    type Output = Power<T>;
+    fn mul(self, rhs: Voltage<T>) -> Power<T> {
+        Power::<T>::raw(self.raw_value() * rhs.raw_value())
     }
 }
 
-impl Div<Current> for Power {
-    type Output = Voltage;
-    fn div(self, rhs: Current) -> Voltage {
-        Voltage::from_base_value(self.base_value() / rhs.base_value())
+impl<T> Div<Voltage<T>> for Power<T>
+where
+    T: Div<Output = T>,
+    Voltage<T>: Quantity<T>,
+    Current<T>: Quantity<T>,
+    Power<T>: Quantity<T>,
+{
+    type Output = Current<T>;
+    fn div(self, rhs: Voltage<T>) -> Current<T> {
+        Current::<T>::raw(self.raw_value() / rhs.raw_value())
     }
 }
+
+impl<T> Div<Current<T>> for Power<T>
+where
+    T: Div<Output = T>,
+    Voltage<T>: Quantity<T>,
+    Current<T>: Quantity<T>,
+    Power<T>: Quantity<T>,
+{
+    type Output = Voltage<T>;
+    fn div(self, rhs: Current<T>) -> Voltage<T> {
+        Voltage::<T>::raw(self.raw_value() / rhs.raw_value())
+    }
+}
+
 #[cfg(test)]
 mod test {
     use super::*;
