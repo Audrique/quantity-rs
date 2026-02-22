@@ -1,4 +1,4 @@
-use super::common::{Quantity, UnitValue};
+use crate::common::{Quantity, UnitValue};
 use derive_more::{Add, Div, Mul, Neg, Sub};
 use std::fmt;
 

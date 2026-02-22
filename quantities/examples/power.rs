@@ -1,7 +1,7 @@
-#[cfg(feature = "electric")]
-use quantities::quantity::power::{Power, PowerUnit};
+#[cfg(feature = "electricity")]
+use quantities::electricity::power::{Power, PowerUnit};
 
-#[cfg(feature = "electric")]
+#[cfg(feature = "electricity")]
 fn main() {
     let p1 = Power::new(1500.0, PowerUnit::Watt); // 1500 W
     let p2 = Power::new(2.0, PowerUnit::KiloWatt); // 2000 W
@@ -17,9 +17,9 @@ fn main() {
     println!("1 hp = {} W", one_hp.to_unit(PowerUnit::Watt));
 }
 
-#[cfg(not(feature = "electric"))]
+#[cfg(not(feature = "electricity"))]
 fn main() {
     eprintln!(
-        "Example 'power' requires the 'electric' feature. Run with:\n  cargo run --example power --features electric"
+        "Example 'power' requires the 'electricity' feature. Run with:\n  cargo run --example power --features electricity"
     );
 }

@@ -8,5 +8,5 @@ quantities-macros = { workspace = true}
 derive_more = { version = "2.1.1", features = ["full"]}
 
 [features]
-electric = []
-default = ["electric"]
+electricity = []
+default = ["electricity"]

@@ -1,6 +1,6 @@
 use std::ops::{Div, Mul};
 
-use super::common::Quantity;
+use crate::common::Quantity;
 use super::{current::Current, power::Power, voltage::Voltage};
 
 impl Mul<Current> for Voltage {
@@ -32,7 +32,7 @@ impl Div<Current> for Power {
 #[cfg(test)]
 mod test {
     use super::*;
-    use crate::quantity::{current::CurrentUnit, power::PowerUnit, voltage::VoltageUnit};
+    use crate::electricity::{current::CurrentUnit, power::PowerUnit, voltage::VoltageUnit};
 
     fn voltage() -> Voltage {
         Voltage::new(230.0, VoltageUnit::Volt)
