@@ -11,3 +11,9 @@ proc-macro-crate = "3.4.0"
 quote = "1.0.44"
 proc-macro2 = "1.0.106"
 syn = {version ="2.0.117", features = ['full']}
+derive_more = { version = "2.1.1", features = ["full"]}
+thiserror = "2.0.18"
+
+[dev-dependencies]
+trybuild = "1.0.116"
+quantities = { workspace = true }
