@@ -1,0 +1,7 @@
+error: missing `unit` argument in `#[quantity(...)]`
+ --> tests/ui/missing_unit.rs:3:1
+  |
+3 | #[quantity()]
+  | ^^^^^^^^^^^^^
+  |
+  = note: this error originates in the attribute macro `quantity` (in Nightly builds, run with -Z macro-backtrace for more info)

@@ -1,0 +1,5 @@
+error: unknown argument `unknown` in `#[quantity(...)]`. Valid arguments: `unit`, `value_type`
+ --> tests/ui/unknown_argument.rs:4:57
+  |
+4 | #[quantity(unit = RandomQuantityUnit, value_type = f64, unknown = something)]
+  |                                                         ^^^^^^^

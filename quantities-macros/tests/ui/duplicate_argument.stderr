@@ -1,0 +1,5 @@
+error: duplicate `unit` argument in `#[quantity(...)]`
+ --> tests/ui/duplicate_argument.rs:4:46
+  |
+4 | #[quantity(unit = RandomQuantityUnit, unit = RandomQuantityUnit)]
+  |                                              ^^^^^^^^^^^^^^^^^^

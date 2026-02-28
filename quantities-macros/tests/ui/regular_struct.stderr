@@ -1,0 +1,5 @@
+error: the `#[quantity(...)]` attribute can only be used on unit structs (zero fields)
+ --> tests/ui/regular_struct.rs:5:12
+  |
+5 | pub struct RegularStruct {
+  |            ^^^^^^^^^^^^^
