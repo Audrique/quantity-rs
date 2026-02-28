@@ -19,9 +19,3 @@ impl UnitValue for CurrentUnit {
         }
     }
 }
-
-impl std::fmt::Display for Current {
-    fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
-        write!(f, "{} A", self.to(CurrentUnit::Ampere))
-    }
-}

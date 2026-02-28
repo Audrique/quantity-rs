@@ -1,6 +1,5 @@
 use crate::common::UnitValue;
 use quantities_macros::quantity;
-use std::fmt;
 
 #[quantity(unit = VoltageUnit)]
 pub struct Voltage;
@@ -18,11 +17,5 @@ impl UnitValue for VoltageUnit {
             VoltageUnit::KiloVolt => 1_000.0,
             VoltageUnit::MilliVolt => 0.001,
         }
-    }
-}
-
-impl fmt::Display for Voltage {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        write!(f, "{} V", self.to(VoltageUnit::Volt))
     }
 }

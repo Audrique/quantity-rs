@@ -1,6 +1,9 @@
 use crate::common::UnitValue;
 use quantities_macros::quantity;
-use std::fmt;
+
+#[quantity(unit = PowerUnit)]
+pub struct Power;
+
 pub enum PowerUnit {
     Watt,
     KiloWatt,
@@ -18,13 +21,5 @@ impl UnitValue for PowerUnit {
             PowerUnit::MegaWatt => 1_000_000.0,
             PowerUnit::Horsepower => 745.699872,
         }
-    }
-}
-#[quantity(unit = PowerUnit)]
-pub struct Power;
-
-impl fmt::Display for Power {
-    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        write!(f, "{} W", self.to(PowerUnit::Watt))
     }
 }
