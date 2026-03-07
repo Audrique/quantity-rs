@@ -1,7 +1,7 @@
 [workspace]
 members = [
-  "quantities",
-  "quantities-macros",
+	"quantities",
+	"quantities-macros",
 ]
 resolver = "3"
 default-members = ["quantities"]
@@ -9,3 +9,6 @@ default-members = ["quantities"]
 [workspace.dependencies]
 quantities = { path = "./quantities" }
 quantities-macros = { path = "./quantities-macros" }
+
+[workspace.lints.clippy]
+all = "deny"

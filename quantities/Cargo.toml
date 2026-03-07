@@ -4,9 +4,11 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-quantities-macros = { workspace = true}
-derive_more = { version = "2.1.1", features = ["full"]}
+derive_more = { version = "2.1.1", features = ["full"] }
+quantities-macros = { workspace = true }
 
 [features]
 electricity = []
 default = []
+[lints]
+workspace = true

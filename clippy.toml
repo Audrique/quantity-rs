@@ -1,0 +1,5 @@
+cognitive-complexity-threshold = 1337
+too-many-lines-threshold = 100
+too-many-arguments-threshold = 5
+min-ident-chars-threshold = 3
+source-item-ordering = ['enum', 'struct', 'trait']

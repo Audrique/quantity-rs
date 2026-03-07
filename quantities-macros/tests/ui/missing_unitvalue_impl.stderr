@@ -2,8 +2,13 @@ error[E0277]: the trait bound `RandomQuantityUnit: UnitValue` is not satisfied
  --> tests/ui/missing_unitvalue_impl.rs:3:17
   |
 3 | #[quantity(unit=RandomQuantityUnit)]
-  |                 ^^^^^^^^^^^^^^^^^^ the trait `UnitValue` is not implemented for `RandomQuantityUnit`
+  |                 ^^^^^^^^^^^^^^^^^^ unsatisfied trait bound
   |
+help: the trait `UnitValue` is not implemented for `RandomQuantityUnit`
+ --> tests/ui/missing_unitvalue_impl.rs:6:1
+  |
+6 | enum RandomQuantityUnit {
+  | ^^^^^^^^^^^^^^^^^^^^^^^
 note: required by a bound in `assert_implemented`
  --> tests/ui/missing_unitvalue_impl.rs:3:1
   |

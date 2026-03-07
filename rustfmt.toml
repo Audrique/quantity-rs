@@ -1,7 +1,7 @@
 edition = "2024"
 max_width = 70
 fn_call_width = 50
-hard_tabs=true
+hard_tabs = true
 newline_style = "Unix"
 use_field_init_shorthand = true
 use_try_shorthand = true
@@ -22,4 +22,3 @@ normalize_comments = true
 normalize_doc_attributes = true
 reorder_impl_items = true
 group_imports = "StdExternalCrate"
-
