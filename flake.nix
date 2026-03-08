@@ -31,13 +31,14 @@
             # the stable version will be used
             nightlyFmt
             rustToolchain # Provides cargo, rustc, rustfmt, clippy
-            pkgs.just
-            pkgs.dprint
             pkgs.pkg-config # Essential for building crates with C-deps
             pkgs.openssl # Common dependency for web/crypto crates (e.g. needed for tokio)
+            pkgs.just
+            pkgs.dprint
+            pkgs.rumdl
           ];
         };
-        formatter = pkgs.nixfmt-rfc-style;
+        formatter = pkgs.nixfmt;
       }
     );
 }

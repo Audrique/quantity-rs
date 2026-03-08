@@ -3,10 +3,12 @@
 fmt:
 	cargo fmt
 	dprint fmt
+	rumdl fmt .
 	nix fmt flake.nix
 
 lint:
 	cargo clippy
+	rumdl check --fix .
 
 test:
 	cargo test

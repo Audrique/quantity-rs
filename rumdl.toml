@@ -1,0 +1,8 @@
+[global]
+exclude = [
+	"target",
+	"CHANGELOG.md",
+	"LICENSE.md",
+]
+
+respect-gitignore = true
