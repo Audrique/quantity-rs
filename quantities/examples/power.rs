@@ -17,11 +17,32 @@ fn main() {
 		p2.to(PowerUnit::KiloWatt)
 	);
 
+	let diff = p1.clone() - p2.clone();
+	println!(
+		"diff: {:?} ({:?} W)",
+		diff,
+		diff.clone().to(PowerUnit::Watt)
+	);
+
 	let sum = p1 + p2;
 	println!(
 		"sum: {:?} ({:?} kW)",
 		sum,
-		sum.to(PowerUnit::KiloWatt)
+		sum.clone().to(PowerUnit::KiloWatt)
+	);
+
+	// Note that right multiplication does not work. 
+	// This is a choice as we want to keep flexibility 
+	// on the underlying type T and it is not possible 
+	// because of the orphan rule.
+	println!(
+		"The power multiplied by 2.0 from the right: {:?}",
+		sum.clone() * 2.0
+	);
+
+	println!(
+		"The power divided by 2.0: {:?}",
+		sum.clone() / 2.0
 	);
 
 	// Horsepower example

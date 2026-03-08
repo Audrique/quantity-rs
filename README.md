@@ -1,4 +1,5 @@
 # quantity-rs
+
 Existing quantity libraries often aim to support as many quantities and units as possible. However, this often makes it complicated for clients to define their own quantities and/or units. `quantity-rs` solves this by making it easy and straightforward for users to define their own custom quantities.
 
 ## Example
