@@ -3,6 +3,7 @@
 fmt:
 	cargo fmt
 	dprint fmt
+	nix fmt flake.nix
 
 lint:
 	cargo clippy

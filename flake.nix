@@ -7,8 +7,15 @@
     rust-overlay.url = "github:oxalica/rust-overlay";
   };
 
-  outputs = { self, nixpkgs, utils, rust-overlay }:
-    utils.lib.eachDefaultSystem (system:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      utils,
+      rust-overlay,
+    }:
+    utils.lib.eachDefaultSystem (
+      system:
       let
         overlays = [ (import rust-overlay) ];
         pkgs = import nixpkgs { inherit system overlays; };
@@ -20,7 +27,7 @@
         devShells.default = pkgs.mkShell {
           RUST_BACKTRACE = 1;
           packages = [
-            # Nightly rustfmt, put it before rustToolchain otherwise 
+            # Nightly rustfmt, put it before rustToolchain otherwise
             # the stable version will be used
             nightlyFmt
             rustToolchain # Provides cargo, rustc, rustfmt, clippy
@@ -30,5 +37,7 @@
             pkgs.openssl # Common dependency for web/crypto crates (e.g. needed for tokio)
           ];
         };
-      });
+        formatter = pkgs.nixfmt-rfc-style;
+      }
+    );
 }
