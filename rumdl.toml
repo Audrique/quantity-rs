@@ -4,5 +4,7 @@ exclude = [
 	"CHANGELOG.md",
 	"LICENSE.md",
 ]
+line-length = 120
+disable = ["MD013"]
 
 respect-gitignore = true
