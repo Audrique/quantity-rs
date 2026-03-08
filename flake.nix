@@ -18,16 +18,16 @@
       in
       {
         devShells.default = pkgs.mkShell {
-          # Everything in this list gets added to your PATH
+          RUST_BACKTRACE = 1;
           packages = [
             # Nightly rustfmt, put it before rustToolchain otherwise 
             # the stable version will be used
-            nightlyFmt         
-            rustToolchain      # Provides cargo, rustc, rustfmt, clippy
-            pkgs.just          # Command runner
-            pkgs.dprint        # Formatter for toml, json, md and yaml
-            pkgs.pkg-config    # Essential for building crates with C-deps
-            pkgs.openssl       # Common dependency for web/crypto crates (e.g. needed for tokio)
+            nightlyFmt
+            rustToolchain # Provides cargo, rustc, rustfmt, clippy
+            pkgs.just
+            pkgs.dprint
+            pkgs.pkg-config # Essential for building crates with C-deps
+            pkgs.openssl # Common dependency for web/crypto crates (e.g. needed for tokio)
           ];
         };
       });
