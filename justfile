@@ -11,5 +11,4 @@ lint:
 	rumdl check --fix .
 
 test:
-	cargo test
-	cargo test -p quantities-macros
+	cargo test --workspace
