@@ -14,6 +14,7 @@ pub trait Quantity<T = f64>: Sized + Clone {
 	{
 		Self::raw(value * unit.value())
 	}
+
 	fn to(&self, unit: Self::Unit) -> T
 	where
 		T: std::ops::Div<Output = T>,
